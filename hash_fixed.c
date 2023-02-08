@@ -1,9 +1,3 @@
-hash_fixed.c
-
-
-
-
-
 /
 *
 * @Name : hash.c
