@@ -1,29 +1,52 @@
-/**
-*
-* @Name : hash.h
-*
-**/
-#ifndef __HASH__
-#define __HASH__
 
-    typedef struct PairValue {
-        #define KEY_STRING_MAX 255
-		char KeyName[KEY_STRING_MAX];
-		int  ValueCount;
-        struct PairValue* Next;
-	} PairValue;
+/
+ * @Name : hash.h
+ *
+ * Fix: Header comment added
+/
 
-	typedef struct {
-		int size;
-		int count;
-		PairValue** data;
-	} HashMap;
+#ifndef HASH
+#define HASH
 
-    HashMap* HashInit(int size);
-    int HashAdd(HashMap *map, const char* key, int value);
-    void HashDelete(HashMap *map, const char* key);
-    PairValue* HashFind(HashMap *map, const char* key);
-    void HashDump(HashMap *map);
-    int HashFunction(const char* key, int size);
-    void HashDestroy(HashMap *map);
+/
+ * Fix: Moved struct PairValue definition to after its usage
+/
+typedef struct PairValue PairValue;
+struct PairValue {
+    #define KEY_STRING_MAX 255
+    char KeyName[KEY_STRING_MAX];
+    int  ValueCount;
+    PairValue* Next;
+};
+
+typedef struct {
+    #define MAP_MAX 128
+    PairValue* data[MAP_MAX];
+} HashMap;
+
+/
+ * Fix: Added argument types to HashInit prototype
+/
+HashMap* HashInit(void);
+
+/
+ * Fix: Added argument types to HashAdd prototype
+/
+void HashAdd(HashMap *map, PairValue *value);
+
+/
+ * Fix: Added argument types to HashDelete prototype
+/
+void HashDelete(HashMap *map, const char* key);
+
+/
+ * Fix: Added argument types to HashFind prototype
+/
+PairValue* HashFind(HashMap *map, const char* key);
+
+/
+ * Fix: Added argument types to HashDump prototype
+/
+void HashDump(HashMap *map);
+
 #endif
