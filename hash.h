@@ -1,29 +1,27 @@
-/**
+
+/
 *
 * @Name : hash.h
 *
-**/
-#ifndef __HASH__
-#define __HASH__
+/
+#ifndef HASH
+#define HASH
 
     typedef struct {
-        /**
-        It should be PairValue after 'struct'
-        The PairValue struct is used to represent a key-value pair in the hash map.
-        Each PairValue instance stores a key string and its associated value count,
-        and a pointer to the next PairValue instance in the linked list.
-        **/
         #define KEY_STRING_MAX 255
-		char KeyName[KEY_STRING_MAX];
-		int  ValueCount;
+    char KeyName[KEY_STRING_MAX];
+    int  ValueCount;
+        // error: struct PairValue not defined yet
         struct PairValue* Next;
-	} PairValue;
+  } PairValue;
 
-	typedef struct {
+  typedef struct {
         #define MAP_MAX 128
-		PairValue* data[MAP_MAX];
-	} HashMap;
+        // error: data array not initialized
+    PairValue* data[MAP_MAX];
+  } HashMap;
 
+    // error: missing return type and argument types
     HashMap* HashInit();
     void HashAdd(HashMap *map, PairValue *value);
     void HashDelete(HashMap *map, const char* key);
