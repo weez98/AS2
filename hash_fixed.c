@@ -7,8 +7,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "hash.h"
+#include "hash_fixed.h"
 
+int main(){
 unsigned HashIndex(const char* key) {
     unsigned sum = 0;
     for (const char* c = key; *c; c++){ // corrected the type of c to const char*
@@ -65,4 +66,5 @@ void HashDump(HashMap *map) {
             printf("%s\n", val->KeyName); // added format specifier for printf
         }
     }
+}
 }
