@@ -1,0 +1,10 @@
+1)Properly define and use constants, especially when the size of arrays depends on them.
+2)Use appropriate data structures for the task at hand and implement them correctly.
+3)Check the return value of memory allocation functions such as malloc and calloc to ensure that the memory allocation was successful.
+4)Avoid using magic numbers and define meaningful constant names for them.
+5)Use pointers correctly and be aware of the difference between passing a pointer and passing the value that the pointer points to.
+6)Test your code thoroughly, including edge cases and error conditions, and make sure to handle error cases gracefully.
+7)Be careful when using string functions such as strcpy and strcmp, as they can easily lead to undefined behavior if used improperly. Make sure to understand their behavior and use them correctly.
+8)Use version control to track changes to your code, and keep a clear and accurate log of changes and bug fixes.
+9)Always properly handle the end of strings when processing them. This includes checking for the null terminator, using strlen, or other appropriate methods.
+10)Regularly review your code and the code of others, especially if it is open source, to identify and address security risks.
