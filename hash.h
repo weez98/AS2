@@ -7,6 +7,12 @@
 #define __HASH__
 
     typedef struct {
+        /**
+        It should be PairValue after 'struct'
+        The PairValue struct is used to represent a key-value pair in the hash map.
+        Each PairValue instance stores a key string and its associated value count,
+        and a pointer to the next PairValue instance in the linked list.
+        **/
         #define KEY_STRING_MAX 255
 		char KeyName[KEY_STRING_MAX];
 		int  ValueCount;
